@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "SET \"NODE_ENV=development\" && next dev",
+    "build": "SET \"NODE_ENV=production\" && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,6 +14,7 @@
     "clsx": "^2.0.0",
     "lucide-react": "^0.284.0",
     "next": "13.5.4",
+    "next-auth": "^4.23.2",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^1.14.0",
