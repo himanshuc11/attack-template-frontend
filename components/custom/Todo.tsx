@@ -5,8 +5,6 @@ import { useState } from "react";
 import useAudio from "@/hooks/useAudio";
 import "./Todo.css";
 
-const DELAY = 1000;
-
 type Props = {
   isCompleted: boolean;
   text: string;
@@ -22,7 +20,7 @@ function Todo(props: Props) {
       if (prevState === true) {
         return false;
       }
-      setTimeout(() => toggle(), 150);
+      toggle();
       return true;
     });
   };
@@ -40,11 +38,10 @@ function Todo(props: Props) {
           style={{
             animation: !isCompleted
               ? "none"
-              : "lineStrike 1s ease-out forwards",
+              : "lineStrike 400ms ease-out forwards",
             animationTimingFunction: "cubic-bezier(.1,1.87,1,-0.47)",
           }}
         />
-        {/* <audio src="/assets/check.mp3" /> */}
         {props.text}
       </label>
     </span>
