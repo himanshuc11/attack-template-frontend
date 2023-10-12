@@ -14,6 +14,9 @@ const discordProvider = DiscordProvider({
 
 const handler = NextAuth({
   providers: [googleProvider, discordProvider],
+  pages: {
+    signIn: "/signIn",
+  },
 });
 
 export { handler as GET, handler as POST };
